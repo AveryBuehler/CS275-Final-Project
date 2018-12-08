@@ -1,3 +1,135 @@
 body {
-  background: red;
+  background: #fff;
+  height: auto;
+}
+
+.wrapper {}
+
+.text-center {
+  text-align: center;
+}
+
+.header-main {
+  font-family: 'ABeeZee', sans-serif;
+  text-transform: uppercase;
+  font-size: 85px;
+  line-height: 85px;
+  color: #000;
+  border: #000 solid 1px;
+}
+
+.header-toptext {
+  font-size: 125px;
+  display: block;
+}
+
+#output-score {
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 35px;
+}
+
+#output-word, #output-difficulty {
+  margin: 35px auto;
+}
+
+#output-word {
+  font-family: 'PT Mono', monospace;
+  font-size: 130px;
+  border: #000 solid 1px;
+}
+
+#output-difficulty {
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 30px;
+  border: #000 solid 1px;
+}
+
+#div-countdown {
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 80px;
+  font-weight: 700;
+}
+
+#div-starting {
+  display: none;
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  height: 50px;
+}
+
+#div-progress, #div-bar, .div-difficulty, .div-word, .hidden {
+  display: none;
+}
+
+#div-progress {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: 30px;
+  border-radius: 25px;
+}
+
+#div-bar {
+  border-radius: 25px;
+  width: 100%;
+  height: 30px;
+  background: #2ab7ca;
+}
+
+.text-input {
+  border: none;
+  border-bottom: 4px #000 solid;
+  font-family: 'PT Mono', monospace;
+  font-size: 130px;
+}
+
+.n-5 {
+  color: #FF0000;
+}
+
+.n-4 {
+  color: #FF7F00;
+}
+
+.n-3 {
+  color: #9400D3;
+}
+
+.n-2 {
+  color: #00FF00;
+}
+
+.n-1 {
+  color: #0000FF;
+}
+
+#button-play {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  padding: 6px;
+  cursor: pointer;
+  background-color: #000;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 32px;
+  font-family: 'ABeeZee', sans-serif;
+  text-transform: uppercase;
+  border: none;
+  letter-spacing: 2px;
+}
+
+#button-play .fa-play {
+  font-size: 16px;
+  height: 20px;
+  margin-left: 6px;
+  vertical-align: middle;
+  transition: .15s;
+}
+
+#button-play:hover .fa-play {
+  margin-left: 12px;
+  transition: .15s;
 }

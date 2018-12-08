@@ -4,14 +4,33 @@
 
 <head>
   <meta charset="utf-8">
-  <title>CS275</title>
+  <title>Word Guesser</title>
   <link rel="stylesheet" type="text/css" href="style/style.css">
+  <link href="https://fonts.googleapis.com/css?family=ABeeZee|PT+Mono" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 
 <body>
-  test
+  <div class="wrapper">
+    <h1 class="header-main text-center"><span class="header-toptext">Word</span>Guesser</h1>
+    <h4 id="output-score" class="text-center"></h4>
+    <div class="div-word hidden">
+      <p id="output-word" class="text-center"></p>
+    </div>
+    <button type="button" id="button-play">Play<i class="fas fa-play"></i></button>
+    <div id="div-starting" class="text-center">Starting in</div>
+    <div id="div-countdown"></div>
 
-  <script src="scripts/scripts.js"></script>
+    <div id="div-progress">
+      <div id="div-bar"></div>
+    </div>
+
+    <div class="div-difficulty hidden">
+      <p id="output-difficulty" class="text-center"></p>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="scripts/scripts.js"></script>
 </body>
 
 </html>

@@ -6,30 +6,101 @@
   <meta charset="utf-8">
   <title>Word Guesser</title>
   <link rel="stylesheet" type="text/css" href="style/style.css">
-  <link href="https://fonts.googleapis.com/css?family=ABeeZee|PT+Mono" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=ABeeZee|PT+Mono|Fredoka+One" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 
 <body>
+  <div id="slice"></div>
   <div class="wrapper">
     <h1 class="header-main text-center"><span class="header-toptext">Word</span>Guesser</h1>
-    <h4 id="output-score" class="text-center"></h4>
+    <h4 id="output-score" class="text-center hidden"></h4>
     <div class="div-word hidden">
       <p id="output-word" class="text-center"></p>
     </div>
-    <button type="button" id="button-play">Play<i class="fas fa-play"></i></button>
-    <div id="div-starting" class="text-center">Starting in</div>
-    <div id="div-countdown"></div>
+    <div class="div-infowrapper" id="hide-infowrapper">
+      <div class="row">
+        <div class="col">
+          <h3>How to play</h3>
+          <hr class="hr-blue">
+          <p>Welcome Avery Buehler's "Word Guesser" game!</p>
+          <p>The purpose of this game is to complete the word seen on screen before the time runs out.</p>
+          <p>There are three difficulty levels. As you get more answers correct, the game will become harder.</p>
+          <p>Compete against yourself or friends on the <i class="fas fa-trophy"></i><span class="text-leaderboardInfo">Local Leaderboard!</span></p>
+          <p>Difficulty levels:</p>
+          <div class="easy" data-label="Easy (+1pt)">
+          </div>
+          <div class="medium" data-label="Medium (+2pts)">
+          </div>
+          <div class="hard" data-label="Hard (+3pts)">
+          </div>
+        </div>
+        <div class="col" id="leaderboard">
+          <h3>Local Leaderboard</h3>
+          <hr class="hr-red">
+          <div id="leaderboard-start">No games stored yet</div>
+          <!--<div id="lb-gold" class="lb-item"><i class="fas fa-medal"></i>Avery 0</div>
+          <div id="lb-silver" class="lb-item"><i class="fas fa-medal"></i>Bob 0</div>
+          <div id="lb-bronze" class="lb-item"><i class="fas fa-medal"></i>Jeff 0</div>-->
+          <div class="lb-parent">
+            <div class="lb-large" id="lb-best">
+              <div id="lb-gold" class="lb-item lb-t3 hidden"></div>
+              <div id="lb-silver" class="lb-item lb-t3 hidden"><i class="fas fa-medal"></i></div>
+              <div id="lb-bronze" class="lb-item lb-t3 hidden"><i class="fas fa-medal"></i></div>
+            </div>
 
-    <div id="div-progress">
-      <div id="div-bar"></div>
+            <div class="lb-small" id="lb-worst">
+              <div class="lb-item lb-norank hidden"></div>
+              <div class="lb-item lb-norank hidden"></div>
+              <div class="lb-item lb-norank hidden"></div>
+              <div class="lb-item lb-norank hidden"></div>
+              <div class="lb-item lb-norank hidden"></div>
+              <div class="lb-item lb-norank hidden"></div>
+              <div class="lb-item lb-norank hidden"></div>
+            </div>
+          </div>
+
+
+          <div class="leaderboard-info"><i class="fas fa-info-circle"></i>This is a locally saved leaderboard. If you are playing online it will not work with others.<br><span id="clear-ls">Click here to clear your local storage.</span></div>
+        </div>
+      </div>
+    </div>
+    <button type="button" id="button-play">Play<i class="fas fa-play"></i></button>
+
+    <div id="id-cdwrapper">
+      <div id="div-starting" class="text-center">Starting in</div>
+      <div id="div-countdown"></div>
     </div>
 
     <div class="div-difficulty hidden">
       <p id="output-difficulty" class="text-center"></p>
     </div>
-  </div>
 
+    <div id="div-progress">
+      <div id="div-bar"></div>
+    </div>
+
+
+    <div class="div-timesup" id="id-timesup">
+      <div id="finalscore" class="text-scoreNum"></div>
+      <input type="text" name="name" placeholder="First Name" id="lb-text-input" maxlength="10">
+      <button type="button" id="lb-submit">Submit</button>
+
+    </div>
+
+    <div class="div-bottomControls" id="id-bottomControls">
+      <div class="row">
+        <div class="col">
+          <span id="resetgame"><i class="fas fa-sync-alt"></i>Restart</span>
+        </div>
+        <div class="col">
+          <span id="gohome"><i class="fas fa-home"></i>Home</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
   <script type="text/javascript" src="scripts/scripts.js"></script>
 </body>
 

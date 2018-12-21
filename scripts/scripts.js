@@ -349,19 +349,14 @@ function updateBoard(leaderboard) {
       for (var index = 0; index < leaderboard.length - 3; index++) {
         worstNumbers[index].innerHTML = "<span class='poo-emoji'>💩</span>" + leaderboard[index + 3].name + ": " + leaderboard[index + 3].score;
         worstNumbers[index].style.display = "block";
-        console.log(index);
       }
     }
-
-
-
   } else {
     document.getElementById('leaderboard-start').style.display = "block";
     document.getElementsByClassName('lb-parent')[0].style.display = "none";
     console.log('Local storage empty.');
   }
 }
-
 
 /* Sorting algorithm used for leaderboard */
 function sortLB(arr) {

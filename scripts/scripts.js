@@ -1,3 +1,12 @@
+/*
+  Avery Buehler
+  CS275: Intro to Internet Programming
+  20 December 2018
+
+  Word Guesser game
+*/
+
+/* Object with words */
 var words = [{
     "word": "jazzy",
     "difficulty": "easy"
@@ -41,14 +50,41 @@ var words = [{
   {
     "word": "watermelon",
     "difficulty": "hard"
+  },
+  {
+    "word": "lumberjack",
+    "difficulty": "hard"
+  },
+  {
+    "word": "mozzarella",
+    "difficulty": "hard"
+  },
+  {
+    "word": "volleyball",
+    "difficulty": "hard"
+  },
+  {
+    "word": "government",
+    "difficulty": "hard"
+  },
+  {
+    "word": "strawberry",
+    "difficulty": "hard"
+  },
+  {
+    "word": "university",
+    "difficulty": "hard"
   }
 ]
 
+/* Declaring a number of variables */
 var number = 6;
 var div = document.getElementById('div-countdown');
 var score = 0;
 var word = document.getElementById('output-word');
 var difficulty = document.getElementById('output-difficulty');
+
+/* Using local storage for the leaderboard */
 var leaderboard = JSON.parse(localStorage.getItem('lb') || "[]");
 var temp = document.getElementsByClassName('hidden');
 var scoreOut = document.getElementById('output-score');
@@ -75,7 +111,6 @@ document.getElementById('resetgame').addEventListener("click", function() {
 }, false);
 
 /* Adding a listener to the home button */
-
 document.getElementById('gohome').addEventListener("click", function() {
   document.getElementById('id-bottomControls').style.display = "none";
   document.getElementById('hide-infowrapper').style.display = "block";
@@ -95,16 +130,29 @@ document.getElementById('gohome').addEventListener("click", function() {
 /* Adding a listener for the leaderboard submit button */
 document.getElementById('lb-submit').addEventListener("click", function() {
   onBoard(document.getElementById('lb-text-input').value);
+  document.getElementById('id-bottomControls').style.display = "none";
+  document.getElementById('hide-infowrapper').style.display = "block";
+  document.getElementById('id-timesup').style.display = "none";
+  document.getElementById('button-play').style.display = "block";
+  bar.style.display = "none";
+  progress.style.display = "none";
+  for (var i = 0; i <= temp.length - 1; i++) {
+    temp[i].style.display = "none";
+  }
+  number = 6;
+  score = 0;
+  clearInterval(id);
+  updateBoard(leaderboard);
 }, false);
 
 /* Adding a listener for clearing local storage */
-
 document.getElementById('clear-ls').addEventListener("click", function() {
   localStorage.clear();
   updateBoard(leaderboard);
   window.alert('Local storage cleared.');
 }, false);
 
+/* Countdown at the beginning */
 function countdown() {
   div.style.display = "block";
   div.textContent = --number;
@@ -119,8 +167,7 @@ function countdown() {
   setTimeout(countdown, 1000);
 }
 
-
-
+/* Starting the game after the countdown */
 function start() {
   for (var i = 0; i <= temp.length - 1; i++) {
     temp[i].style.display = "block";
@@ -132,6 +179,7 @@ function start() {
   game();
 }
 
+/* Getting the word & resetting the progress bar */
 function game() {
   scoreOut.innerHTML = "Score: <span class='text-scoreNum'>" + score + "</span>";
 
@@ -139,7 +187,25 @@ function game() {
   progressBar();
 
   /* Word */
-  let currentWord = words[Math.floor(Math.random() * words.length)];
+  var currentWord = words[Math.floor(Math.random() * words.length)];
+
+  /* There are 3 phases of the game */
+  if (score <= 3) {
+    console.log('Phase 1');
+    while (currentWord.difficulty != "easy") {
+      currentWord = words[Math.floor(Math.random() * words.length)];
+    }
+  }
+  if (score > 3 && score < 9) {
+    console.log('Phase 2');
+    while (currentWord.difficulty == "hard") {
+      currentWord = words[Math.floor(Math.random() * words.length)];
+    }
+  }
+  if (score >= 9) {
+    console.log('Phase 3');
+    currentWord = words[Math.floor(Math.random() * words.length)];
+  }
 
   wordGuess = currentWord;
   word.innerHTML = formatWord(currentWord.word);
@@ -150,6 +216,7 @@ function game() {
   console.log(currentWord);
 }
 
+/* Checking if the guess is correct or not */
 function guess(text) {
   var guess = text.value;
   var correct = wordGuess.word.substring(1, wordGuess.word.length - 1);
@@ -173,18 +240,22 @@ function guess(text) {
   }
 }
 
+/* Displaying the "Out of time" screen */
 function timesUp() {
   bar.style.display = "none";
   progress.style.display = "none";
   word.style.display = "none";
   difficulty.style.display = "none";
   document.getElementById('id-timesup').style.display = "block";
+  document.getElementById('final-word').innerHTML = wordGuess.word;
+  document.getElementById('id-bottomControls').style.display = "none";
   for (var i = 0; i <= temp.length - 1; i++) {
     temp[i].style.display = "none";
   }
   document.getElementById('finalscore').innerHTML = score;
 }
 
+/* Checks if the user got a spot on the leaderboard */
 function onBoard(name) {
   leaderboard = JSON.parse(localStorage.getItem('lb') || "[]");
 
@@ -215,11 +286,12 @@ function onBoard(name) {
 
 updateBoard(leaderboard);
 
+/* Updates the leaderboard */
 function updateBoard(leaderboard) {
   leaderboard = sortLB(leaderboard);
   if (localStorage.getItem('lb') !== null) {
 
-    console.log('NOT EMPTY');
+    console.log('Local storage not empty.');
 
     var topThree = document.getElementById('lb-best');
     var lastSeven = document.getElementById('lb-worst');
@@ -231,12 +303,12 @@ function updateBoard(leaderboard) {
 
     switch (leaderboard.length) {
       case 1:
-        lbgold.innerHTML = "<i class='fas fa-medal'></i>" + leaderboard[0].name;
+        lbgold.innerHTML = "<i class='fas fa-medal'></i>" + leaderboard[0].name + ": " + leaderboard[0].score;
         lbgold.style.display = "block";
         break;
       case 2:
-        lbgold.innerHTML = "<i class='fas fa-medal'></i>" + leaderboard[0].name;
-        lbsilver.innerHTML = "<i class='fas fa-medal'></i>" + leaderboard[1].name;
+        lbgold.innerHTML = "<i class='fas fa-medal'></i>" + leaderboard[0].name + ": " + leaderboard[0].score;
+        lbsilver.innerHTML = "<i class='fas fa-medal'></i>" + leaderboard[1].name + ": " + leaderboard[1].score;
         lbgold.style.display = "block";
         lbsilver.style.display = "block";
         break;
@@ -248,9 +320,9 @@ function updateBoard(leaderboard) {
       case 8:
       case 9:
       case 10:
-        lbgold.innerHTML = "<i class='fas fa-medal'></i>" + leaderboard[0].name;
-        lbsilver.innerHTML = "<i class='fas fa-medal'></i>" + leaderboard[1].name;
-        lbbronze.innerHTML = "<i class='fas fa-medal'></i>" + leaderboard[2].name;
+        lbgold.innerHTML = "<i class='fas fa-medal'></i>" + leaderboard[0].name + ": " + leaderboard[0].score;
+        lbsilver.innerHTML = "<i class='fas fa-medal'></i>" + leaderboard[1].name + ": " + leaderboard[1].score;
+        lbbronze.innerHTML = "<i class='fas fa-medal'></i>" + leaderboard[2].name + ": " + leaderboard[2].score;
         lbgold.style.display = "block";
         lbsilver.style.display = "block";
         lbbronze.style.display = "block";
@@ -275,7 +347,7 @@ function updateBoard(leaderboard) {
 
     if (leaderboard.length > 3) {
       for (var index = 0; index < leaderboard.length - 3; index++) {
-        worstNumbers[index].innerHTML = "<span class='poo-emoji'>💩</span>" + leaderboard[index + 3].name;
+        worstNumbers[index].innerHTML = "<span class='poo-emoji'>💩</span>" + leaderboard[index + 3].name + ": " + leaderboard[index + 3].score;
         worstNumbers[index].style.display = "block";
         console.log(index);
       }
@@ -286,12 +358,12 @@ function updateBoard(leaderboard) {
   } else {
     document.getElementById('leaderboard-start').style.display = "block";
     document.getElementsByClassName('lb-parent')[0].style.display = "none";
-    console.log('empty');
+    console.log('Local storage empty.');
   }
 }
 
 
-
+/* Sorting algorithm used for leaderboard */
 function sortLB(arr) {
   var len = arr.length;
   for (var i = len - 1; i >= 0; i--) {
@@ -306,6 +378,7 @@ function sortLB(arr) {
   return arr;
 }
 
+/* Used for the width of the input field */
 function inputWidth(obj) {
   let width = 0;
   switch (obj.difficulty) {
@@ -323,6 +396,7 @@ function inputWidth(obj) {
   document.getElementById('focusMe').style.width = width + "px";
 }
 
+/* Used for the progress bar */
 function progressBar() {
   bar.style.display = "block";
   progress.style.display = "block";
@@ -350,11 +424,13 @@ function progressBar() {
   }
 }
 
+/* Used to format the word */
 function formatWord(word) {
   let wordFormat = word.charAt(0) + '<span id="output-text"></span>' + word.charAt(word.length - 1);
   return wordFormat;
 }
 
+/* Used to create the text field */
 function createTextField(word) {
   var input = document.createElement('input');
   input.setAttribute('type', 'text');

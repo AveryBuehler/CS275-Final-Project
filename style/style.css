@@ -1,5 +1,10 @@
-/* font-family: 'Fredoka One', cursive;
-font-family: 'ABeeZee', sans-serif; */
+/*
+  Avery Buehler
+  CS275: Intro to Internet Programming
+  20 December 2018
+
+  Word Guesser game
+*/
 body {
   background: #fafafa;
   height: auto;
@@ -15,8 +20,8 @@ body {
   text-align: center;
 }
 
+/* Used to create the blue slice on the left of the screen */
 #slice {
-  /*F8F8F8*/
   background: linear-gradient(63deg, #80d9e5 28%, #fafafa 0px);
   height: calc(100% + 100px);
   left: 0;
@@ -29,7 +34,8 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.hr-blue {
+/* The blue divider in the info section */
+.hr-green {
   border: 4px solid #00b159;
   border-radius: 5px;
   margin-top: 0;
@@ -38,6 +44,7 @@ body {
   margin-left: 0;
 }
 
+/* The red divider in the info section */
 .hr-red {
   border: 4px solid #d11141;
   border-radius: 5px;
@@ -91,6 +98,7 @@ body {
   font-weight: 800;
 }
 
+/* Used for the difficulty bars in the info section */
 .easy, .medium, .hard {
   position: relative;
   border-radius: 25px;
@@ -148,6 +156,7 @@ body {
   height: 14px;
 }
 
+/* Header on the top, "GUESSER" */
 .header-main {
   margin-top: 80px;
   font-family: 'Fredoka One', cursive;
@@ -157,12 +166,14 @@ body {
   color: #123456;
 }
 
+/* Header on the top, "WORD" */
 .header-toptext {
   color: #123456;
   font-size: 125px;
   display: block;
 }
 
+/* Score format */
 #output-score {
   font-family: 'Fredoka One', cursive;
   font-size: 35px;
@@ -178,12 +189,14 @@ body {
   margin: 35px auto;
 }
 
+/* Word format */
 #output-word {
   font-family: 'PT Mono', monospace;
   font-size: 130px;
   margin-bottom: 0;
 }
 
+/* Difficulty format */
 #output-difficulty {
   margin-top: 0;
   font-family: 'Fredoka One', cursive;
@@ -201,12 +214,14 @@ body {
   display: none;
 }
 
+/* Countdown format */
 #div-countdown {
   font-family: 'Fredoka One', cursive;
   font-size: 150px;
   font-weight: 700;
 }
 
+/* Countdown text format */
 #div-starting {
   font-family: 'Fredoka One', cursive;
   font-size: 90px;
@@ -214,6 +229,7 @@ body {
   height: 90px;
 }
 
+/* Used to show/hide elements */
 #div-progress, #div-bar, .div-difficulty, .div-word, .hidden {
   display: none;
 }
@@ -232,6 +248,7 @@ body {
   height: 30px;
 }
 
+/* Used for the text field input */
 .text-input {
   background: #fafafa;
   border: none;
@@ -244,6 +261,7 @@ body {
   display: none;
 }
 
+/* Restart/Home button format */
 .div-bottomControls {
   width: 20%;
   margin-left: auto;
@@ -253,6 +271,7 @@ body {
   font-size: 20px;
 }
 
+/* Restart/Home button icons */
 .div-bottomControls .fas {
   font-size: 18px;
   margin-right: 5px;
@@ -284,6 +303,7 @@ body {
   text-align: center;
 }
 
+/* Used for the countdown timer */
 .n-5 {
   color: #051e3e;
 }
@@ -304,6 +324,7 @@ body {
   color: #851e3e;
 }
 
+/* Play button format */
 #button-play {
   display: block;
   margin-left: auto;
@@ -369,13 +390,64 @@ body {
   text-align: center;
 }
 
-#finalscore {
+/* Submit button format */
+.div-timesup #lb-submit {
+  font-weight: 400px;
+  font-family: 'Fredoka One', cursive;
+  margin-top: 28px;
+  font-size: 32px;
+  display: block;
+  width: 260px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fe4a49;
+  background: #fafafa;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.5s;
+  transition-timing-function: ease-in-out;
+}
+
+#lb-submit:hover .fa-angle-double-right {
+  transition: 1s;
+  margin-left: 15px;
+}
+
+#lb-submit .fas {
+  transition: 1s;
+  margin-left: 5px;
+  font-size: 25px;
+  vertical-align: center;
+}
+
+#final-score-start {
   text-align: center;
   font-family: 'Fredoka One', cursive;
   font-size: 40px;
   font-weight: 100;
+  margin-bottom: 18px;
 }
 
+#finalscore {
+  display: inline-block;
+  font-size: 40px;
+}
+
+#final-word {
+  font-family: 'PT Mono', monospace;
+  font-weight: 900;
+  color: #fe4a49;
+}
+
+#final-outoftime {
+  text-align: center;
+  font-family: 'Fredoka One', cursive;
+  font-size: 25px;
+  margin-bottom: 25px;
+}
+
+/* Leaderboard format */
 #leaderboard-start {
   text-align: center;
   font-size: 30px;

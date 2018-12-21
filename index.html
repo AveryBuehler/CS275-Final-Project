@@ -1,28 +1,58 @@
-<!doctype html>
+<!--
+  Avery Buehler
+  CS275: Intro to Internet Programming
+  20 December 2018
+
+  Word Guesser game
+-->
+
+<!DOCTYPE html>
 
 <html>
 
+<!-- Head information -->
+
 <head>
-  <meta charset="utf-8">
+  <!-- Meta information -->
+  <meta charset="UTF-8">
+  <meta name="author" content="Avery Buehler">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Title -->
   <title>Word Guesser</title>
-  <link rel="stylesheet" type="text/css" href="style/style.css">
+
+  <!-- Links -->
   <link href="https://fonts.googleapis.com/css?family=ABeeZee|PT+Mono|Fredoka+One" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style/style.css">
+  <link rel="icon" href="assets/bookicon.png">
 </head>
 
+<!-- Body -->
+
 <body>
+  <!-- Displaying the blue slice on the left -->
   <div id="slice"></div>
+
+  <!-- Content wrapper -->
   <div class="wrapper">
+
+    <!-- Title section -->
     <h1 class="header-main text-center"><span class="header-toptext">Word</span>Guesser</h1>
+
+    <!-- Score section -->
     <h4 id="output-score" class="text-center hidden"></h4>
     <div class="div-word hidden">
       <p id="output-word" class="text-center"></p>
     </div>
+
+    <!-- Information section -->
     <div class="div-infowrapper" id="hide-infowrapper">
       <div class="row">
         <div class="col">
           <h3>How to play</h3>
-          <hr class="hr-blue">
+          <hr class="hr-green">
           <p>Welcome Avery Buehler's "Word Guesser" game!</p>
           <p>The purpose of this game is to complete the word seen on screen before the time runs out.</p>
           <p>There are three difficulty levels. As you get more answers correct, the game will become harder.</p>
@@ -48,7 +78,6 @@
               <div id="lb-silver" class="lb-item lb-t3 hidden"><i class="fas fa-medal"></i></div>
               <div id="lb-bronze" class="lb-item lb-t3 hidden"><i class="fas fa-medal"></i></div>
             </div>
-
             <div class="lb-small" id="lb-worst">
               <div class="lb-item lb-norank hidden"></div>
               <div class="lb-item lb-norank hidden"></div>
@@ -59,35 +88,42 @@
               <div class="lb-item lb-norank hidden"></div>
             </div>
           </div>
-
-
           <div class="leaderboard-info"><i class="fas fa-info-circle"></i>This is a locally saved leaderboard. If you are playing online it will not work with others.<br><span id="clear-ls">Click here to clear your local storage.</span></div>
         </div>
       </div>
     </div>
+
+    <!-- Play button -->
     <button type="button" id="button-play">Play<i class="fas fa-play"></i></button>
 
+    <!-- Used for the countdown timer -->
     <div id="id-cdwrapper">
       <div id="div-starting" class="text-center">Starting in</div>
       <div id="div-countdown"></div>
     </div>
 
+    <!-- Word difficulty -->
     <div class="div-difficulty hidden">
       <p id="output-difficulty" class="text-center"></p>
     </div>
 
+    <!-- Progress bar -->
     <div id="div-progress">
       <div id="div-bar"></div>
     </div>
 
-
+    <!-- Displayed when the game is lost (out of time) -->
     <div class="div-timesup" id="id-timesup">
-      <div id="finalscore" class="text-scoreNum"></div>
+      <div id="final-outoftime">Out of time! The word was: <span id="final-word"></span></div>
+      <div id="final-score-start">
+        Your score:
+        <span id="finalscore" class="text-scoreNum"></span>
+      </div>
       <input type="text" name="name" placeholder="First Name" id="lb-text-input" maxlength="10">
-      <button type="button" id="lb-submit">Submit</button>
-
+      <button type="button" id="lb-submit">Submit Score<i class="fas fa-angle-double-right"></i></button>
     </div>
 
+    <!-- Restart & Home button in game -->
     <div class="div-bottomControls" id="id-bottomControls">
       <div class="row">
         <div class="col">
@@ -98,9 +134,9 @@
         </div>
       </div>
     </div>
+  </div>
 
-  </div>
-  </div>
+  <!-- Javascript -->
   <script type="text/javascript" src="scripts/scripts.js"></script>
 </body>
 

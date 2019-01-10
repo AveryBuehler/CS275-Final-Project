@@ -25,3 +25,6 @@
 ## Demo
 
 ## Future Features
+
+## License
+[MIT](https://tldrlegal.com/license/mit-license)

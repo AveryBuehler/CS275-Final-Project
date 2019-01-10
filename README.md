@@ -14,3 +14,14 @@
 <div align="center">
   <sub>Made for CS275 - Introduction to Internet Programming</sub>
 </div>
+
+## Table of Contents
+- [Features](#features)
+- [Demo](#demo)
+- [Future Features](#future-features)
+
+## Features
+
+## Demo
+
+## Future Features

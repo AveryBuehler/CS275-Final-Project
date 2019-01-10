@@ -11,3 +11,6 @@
     </a>
   </h3>
 </div>
+<div align="center">
+  <sub>Made for CS275 - Introduction to Internet Programming</sub>
+</div>

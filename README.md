@@ -21,9 +21,20 @@
 - [Future Features](#future-features)
 
 ## Overview
-- The web application is made entirely of **vanilla HTML**, **CSS**, and **JavaScript**
-- Its only dependencies are **[Google Fonts](https://fonts.google.com/)** and **[Font Awesome 5.6.3](https://fontawesome.com/)**
-- The application features a  **local leaderboard** utilizing the browser's local storage
+  ### How to Play
+  Play against yourself or friends in this incredibly difficult word-guessing game! The purpose of the game is to fill in the middle section of a word. For example: if the screen displayed: `C_T`, the player has to guess the letter which comes between `C` and `T`. While there are three potentially correct answers (`CAT`, `COT`, and `CUT`), there is only one answer which matters! The player has to be quick in guessing, however, since there are only 5-seconds in each round. Get a round wrong and you lose. Get a round right, however, and you will recieve points based on the difficulty level of the word. 
+  
+Currently, there are three difficulties: _easy_, _medium_, and _hard_:
+    - **Easy** words are worth +1 points each
+    - **Medium** words are worth +2 points each
+    - **Hard** words are worth +3 points each
+
+
+  ### Features
+    - The web application is made entirely of **vanilla HTML**, **CSS**, and **JavaScript**
+    - The application features a  **local leaderboard** utilizing the browser's local storage
+    - Its only dependencies are **[Google Fonts](https://fonts.google.com/)** and **[Font Awesome 5.6.3](https://fontawesome.com/)**
+
 
 ## Demo
 

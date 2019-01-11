@@ -22,7 +22,7 @@
 
 ## Overview
 - The web application is made entirely of **vanilla HTML**, **CSS**, and **JavaScript**
-- Its only dependencies are [Google Fonts](https://fonts.google.com/) and [Font Awesome 5.6.3](https://fontawesome.com/)
+- Its only dependencies are **[Google Fonts](https://fonts.google.com/)** and **[Font Awesome 5.6.3](https://fontawesome.com/)**
 - The application features a  **local leaderboard** utilizing the browser's local storage
 
 ## Demo

@@ -38,7 +38,7 @@ Currently, there are three difficulties: **easy**, **medium**, and **hard**:
 - **Hard** words are worth +3 points each and are typically around 10 letters
 
 
-Once the player 
+Once the player inevitably loses, they'll have the opportunity to compete for a spot on the coveted **local leaderboard**! 
 
 ### Features
 - The web application is made entirely of **vanilla HTML**, **CSS**, and **JavaScript**

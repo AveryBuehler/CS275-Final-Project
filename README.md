@@ -49,6 +49,6 @@ Once the player inevitably loses, they'll have the opportunity to compete for a 
 ## Demo
 
 ## Future Features
-
+- [ ] Allow the player to enter in their own set of words before playing
 ## License
 [MIT](https://tldrlegal.com/license/mit-license)

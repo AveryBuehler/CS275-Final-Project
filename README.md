@@ -7,7 +7,7 @@
 <div align="center">
   <h3>
     <a href="https://averybuehler.github.io/CS275-Final-Project/" target="_blank">
-      Play Online 💻
+      Play Online
     </a>
   </h3>
 </div>

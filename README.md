@@ -19,7 +19,6 @@
 - [Overview](#overview)
   - [How to Play](#how-to-play)
   - [Features](#features)
-- [Demo](#demo)
 - [Improvements](#improvements)
 
 ## Overview
@@ -46,7 +45,6 @@ Once the player inevitably loses, they'll have the opportunity to compete for a 
 - Its only dependencies are **[Google Fonts](https://fonts.google.com/)** and **[Font Awesome 5.6.3](https://fontawesome.com/)**
 
 <sub>The console contains a bunch of information for debugging purposes, so you can cheat if you don't want to use too much brain power! </sub>
-## Demo
 
 ## Improvements
 - [ ] Allow the player to enter in their own set of words before playing

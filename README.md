@@ -17,6 +17,8 @@
 
 ## Table of Contents
 - [Overview](#overview)
+  - [How to Play](#how-to-play)
+  - [Features](#features)
 - [Demo](#demo)
 - [Future Features](#future-features)
 

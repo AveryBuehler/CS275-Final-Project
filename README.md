@@ -51,5 +51,6 @@ Once the player inevitably loses, they'll have the opportunity to compete for a 
 ## Improvements
 - [ ] Allow the player to enter in their own set of words before playing
 - [ ] Make the web page responsive to various viewports (e.g., mobile, 4k monitors, etc.)
+- [ ] Add sound effects
 ## License
 [MIT](https://tldrlegal.com/license/mit-license)

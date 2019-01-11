@@ -21,7 +21,7 @@
 - [Future Features](#future-features)
 
 ## Overview
-This web application was made entirely in vanilla HTML, CSS, and JavaScript. Its only dependencies are [Google Fonts](https://fonts.google.com/) and [Font Awesome 5.6.3](https://fontawesome.com/). 
+This web application is made entirely of vanilla HTML, CSS, and JavaScript. Its only dependencies are [Google Fonts](https://fonts.google.com/) and [Font Awesome 5.6.3](https://fontawesome.com/). 
 
 ## Demo
 

@@ -22,6 +22,9 @@
 
 ## Features
 - Leaderboard using local storage
+- Game complexity increases with score
+- Complex CSS & JavaScript
+
 ## Demo
 
 ## Future Features

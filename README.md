@@ -22,9 +22,9 @@
 
 ## Overview
   ### How to Play
-  Play against yourself or friends in this incredibly difficult word-guessing game!  
+  To play Word Guesser, [click here](https://averybuehler.github.io/CS275-Final-Project/). It is being hosted on GitHub Pages.
   
-  The purpose of the game is to fill in the middle section of a word. For example: if the screen displayed: `C_T`, the player has to guess the letter which comes between `C` and `T`. While there are three potentially correct answers (`CAT`, `COT`, and `CUT`), there is only one answer which matters! The player has to be quick in guessing, however, since there are only 5-seconds in each round. Get a round wrong and you lose. Get a round right, however, and you will recieve points based on the difficulty level of the word. 
+  The purpose of this game is to correctly guess the middle-section of a word. For example: if the screen displayed: `C_T`, the player    has to guess the letter which comes between `C` and `T`. While there are three potentially correct answers (`CAT`, `COT`, and `CUT`), there is only one answer which matters! The player has to be quick in guessing, however, since there are only 5-seconds in each round. Get a round wrong and you lose. Get a round right, however, and you will recieve points based on the difficulty level of the word. 
   
 Currently, there are three difficulties: **easy**, **medium**, and **hard**:
 - **Easy** words are worth +1 points each

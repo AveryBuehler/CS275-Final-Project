@@ -21,9 +21,9 @@
 - [Future Features](#future-features)
 
 ## Overview
-- This web application is made entirely of vanilla HTML, CSS, and JavaScript
+- The web application is made entirely of **vanilla HTML**, **CSS**, and **JavaScript**
 - Its only dependencies are [Google Fonts](https://fonts.google.com/) and [Font Awesome 5.6.3](https://fontawesome.com/)
-- The application utilizes local storage - a type of web storage that allows JavaScript to store and access data right in the browser with no expiration date - to create a local leaderboard
+- The application features a  **local leaderboard** utilizing the browser's local storage
 
 ## Demo
 

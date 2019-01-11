@@ -35,7 +35,7 @@ Currently, there are three difficulties: **easy**, **medium**, and **hard**:
     - The application features a  **local leaderboard** utilizing the browser's local storage
     - Its only dependencies are **[Google Fonts](https://fonts.google.com/)** and **[Font Awesome 5.6.3](https://fontawesome.com/)**
 
-
+<sub>For demonstration purposes, you may use the console to cheat...</sub>
 ## Demo
 
 ## Future Features

@@ -21,7 +21,7 @@
 - [Future Features](#future-features)
 
 ## Features
-
+- Leaderboard using local storage
 ## Demo
 
 ## Future Features

@@ -20,7 +20,7 @@
   - [How to Play](#how-to-play)
   - [Features](#features)
 - [Demo](#demo)
-- [Future Features](#future-features)
+- [Improvements](#improvements)
 
 ## Overview
   ### How to Play
@@ -48,7 +48,8 @@ Once the player inevitably loses, they'll have the opportunity to compete for a 
 <sub>The console contains a bunch of information for debugging purposes, so you can cheat if you don't want to use too much brain power! </sub>
 ## Demo
 
-## Future Features
+## Improvements
 - [ ] Allow the player to enter in their own set of words before playing
+- [ ] Make the web page responsive to various viewports (e.g., mobile, 4k monitors, etc.)
 ## License
 [MIT](https://tldrlegal.com/license/mit-license)
